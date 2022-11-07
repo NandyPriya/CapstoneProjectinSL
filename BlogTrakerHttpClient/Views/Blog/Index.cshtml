@@ -1,0 +1,67 @@
+﻿@model IEnumerable<BlogTrakerHttpClient.Models.Blogee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List Of Blogs</h2>
+
+<p>
+    @Html.ActionLink("Add New", "AddNewEmployee", new { /* id=item.PrimaryKey */ style = "Green" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BlogId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subject)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfCreation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BlogUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpEmailId)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BlogId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfCreation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BlogUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpEmailId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */style = "Red" }) |
+
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ style = "Red" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<a href="https://localhost:44331/Blog/Login">Logout</a>
+
